@@ -202,7 +202,65 @@ article, .operating_cards__card {
   text-align: center;
   background-color: #f6f6f6;
 }
-.introducing h1, .introducing p {
+.introducing h1,
+.introducing p {
+  padding: 10px;
+}
+
+.hero {
+  height: 270px;
+  /*retravailler la taille en % pour responsive + un max-height*/
+}
+.hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /*penser à faire mixin pour img*/
+}
+
+.menu {
+  position: relative;
+  margin-top: -60px;
+  background: #f6f6f6;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+}
+.menu__name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0px;
+}
+
+.menu__content {
+  display: grid;
+  gap: 20px;
+}
+.menu__content section {
+  display: grid;
+  gap: 20px;
+}
+
+.food {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 30px 60px;
+  height: 70px;
+  justify-items: start;
+  align-items: center;
+  background-color: #ffffff;
+}
+.food__check {
+  background-color: #99e2d0;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+}
+.food__description {
   padding: 10px;
 }
 
