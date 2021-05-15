@@ -51,13 +51,23 @@ table {
 }
 
 /* voir si ya pas moyen de faire un truc super pété avec une fonction qui attribue la font en fonction de la taille que je choisi avec une maps ...*/
-/*padding: 40px 4% 0px 4% en mixin !*/
-/* mixin margin 
-text-shadow mixin 
-box shadow mixin
-border radius classic / button / title en mixin*/
+/*retravailer les padding et les margin plus proprement ...*/
 .wrapper {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.header__btn {
+  position: absolute;
+  top: center;
+  left: 10px;
 }
 
 .footer {
