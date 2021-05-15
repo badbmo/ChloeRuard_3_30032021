@@ -64,6 +64,7 @@ table {
   padding: 20px;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
   position: relative;
+  background-color: #ffffff;
 }
 .header__btn {
   position: absolute;
@@ -92,7 +93,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 .btn button {
   padding: 12px 20px;
@@ -111,33 +112,37 @@ article, .operating_cards__card {
 }
 
 /*retravailler les shadows: plus marqué en bas et bas droite*/
-.restau_cards {
+.restau {
+  padding: 20px;
+  background-color: #f6f6f6;
+}
+.restau__cards {
   display: grid;
   gap: 20px;
 }
-.restau_cards__card {
+.restau__cards__card {
   position: relative;
 }
-.restau_cards__card__picture {
+.restau__cards__card__picture {
   border-radius: 20px 20px 0px 0px;
   overflow: hidden;
   height: 175px;
 }
-.restau_cards__card__picture img {
+.restau__cards__card__picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restau_cards__card__txt {
+.restau__cards__card__txt {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
-.restau_cards__card__txt .heart {
+.restau__cards__card__txt .heart {
   justify-self: end;
   align-self: center;
 }
-.restau_cards__card--new {
+.restau__cards__card--new {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -149,6 +154,7 @@ article, .operating_cards__card {
 .operating_cards {
   display: grid;
   gap: 20px;
+  padding: 20px;
   background-color: #ffffff;
   /*pourquoi le fond ne s'applique pas ?*/
 }
@@ -161,6 +167,7 @@ article, .operating_cards__card {
   align-items: center;
   height: 70px;
   padding-left: 40px;
+  background-color: #f6f6f6;
 }
 .operating_cards__card__number {
   background-color: #9356dc;
@@ -188,6 +195,15 @@ article, .operating_cards__card {
 }
 .search__icon {
   padding-right: 20px;
+}
+
+.introducing {
+  padding-top: 45px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.introducing h1, .introducing p {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
