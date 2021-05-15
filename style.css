@@ -96,6 +96,7 @@ a {
   padding-bottom: 60px;
 }
 .btn button {
+  cursor: pointer;
   padding: 12px 20px;
   min-width: 190px;
   border-radius: 50px;
@@ -156,7 +157,6 @@ article, .operating_cards__card {
   gap: 20px;
   padding: 20px;
   background-color: #ffffff;
-  /*pourquoi le fond ne s'applique pas ?*/
 }
 .operating_cards__card {
   position: relative;
@@ -180,7 +180,7 @@ article, .operating_cards__card {
   color: #ffffff;
   position: absolute;
   top: center;
-  left: -2px;
+  left: -15px;
 }
 .operating_cards__card__icon {
   color: #7e7e7e;

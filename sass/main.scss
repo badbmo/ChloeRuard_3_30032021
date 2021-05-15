@@ -93,6 +93,7 @@ a {
 @include flex-center;
 padding-bottom: 60px; 
 	button {
+		cursor: pointer;
 		padding: 12px 20px;
 		min-width: 190px;
 		border-radius: 50px;
@@ -156,7 +157,6 @@ background-color: $primary-background-color;
 	@include grid;
 	padding: 20px;
 	background-color: $secondary-background-color;
-	/*pourquoi le fond ne s'applique pas ?*/
 
 	&__card {
 		position: relative;
@@ -178,7 +178,7 @@ background-color: $primary-background-color;
 			color: $secondary-text-color;
 			position: absolute;
 			top: center;
-			left: -2px;
+			left: -15px;
 		}
 		&__icon{
 			color:$operation-icon-color;
