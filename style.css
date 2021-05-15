@@ -1,18 +1,125 @@
-/* Error: expected selector.
- *   ,
- * 1 | *∕
- *   |  ^
- *   '
- *   sass\base\_reset.scss 1:2  @import
- *   sass\main.scss 1:9         root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: expected selector.\a   \2577 \a 1 \2502  */\d\a   \2502   ^\a   \2575 \a   sass\\base\\_reset.scss 1:2  @import\a   sass\\main.scss 1:9         root stylesheet";
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* voir si ya pas moyen de faire un truc super pété avec une fonction qui attribue la font en fonction de la taille que je choisi avec une maps ...*/
+/*padding: 40px 4% 0px 4% en mixin !*/
+/* mixin margin 
+text-shadow mixin 
+box shadow mixin
+border radius classic / button / title en mixin*/
+.wrapper {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.footer {
+  background-color: #353535;
+  color: #ffffff;
+  padding: 0;
+}
+.footer__logo img {
+  filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
+}
+.footer ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 50px;
+  border-width: 0px;
+  color: #ffffff;
+  background: #ff79da;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  font-weight: bold;
+}
+
+.restau_cards {
+  display: grid;
+  gap: 20px;
+}
+.restau_cards__card {
+  position: relative;
+}
+.restau_cards__card__picture {
+  border-radius: 20px 20px 0px 0px;
+  overflow: hidden;
+  height: 175px;
+}
+.restau_cards__card__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restau_cards__card__txt {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.restau_cards__card__txt .heart {
+  justify-self: end;
+  align-self: center;
+}
+.restau_cards__card--new {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #1b6150;
+  background-color: #99e2d0;
+  padding: 8px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
