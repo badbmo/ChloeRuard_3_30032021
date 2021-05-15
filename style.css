@@ -172,4 +172,15 @@ article, .operating_cards__card {
   color: #7e7e7e;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 15px;
+}
+.search__icon {
+  padding-right: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

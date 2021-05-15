@@ -164,3 +164,12 @@ article {
 		}
 	}
 }
+
+.search{
+	@include flex-center;
+	background-color: $city-background-color;
+	padding:15px;
+	&__icon{
+		padding-right:20px;
+	}
+}
