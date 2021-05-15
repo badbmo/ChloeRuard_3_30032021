@@ -63,7 +63,7 @@ border radius classic / button / title en mixin*/
 .footer {
   background-color: #353535;
   color: #ffffff;
-  padding: 0;
+  padding: 20px;
 }
 .footer__logo img {
   filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
@@ -85,6 +85,11 @@ button {
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   font-weight: bold;
+}
+
+article {
+  border-radius: 20px;
+  box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
 }
 
 .restau_cards {

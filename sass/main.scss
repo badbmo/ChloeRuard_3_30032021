@@ -35,6 +35,7 @@ text-shadow mixin
 box shadow mixin
 border radius classic / button / title en mixin*/
 
+
 @mixin grid {
 	display: grid;
 	gap: 20px;
@@ -53,7 +54,7 @@ border radius classic / button / title en mixin*/
 .footer {
 	background-color: $footer-background-color;
 	color: $secondary-text-color;
-	padding: 0;
+	padding: 20px;
 	&__logo img {
 		filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
 	}
@@ -75,6 +76,11 @@ button {
 	background: $secondary-color;
 	background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
 	font-weight: bold;
+}
+
+article{
+	border-radius: 20px;
+	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
 }
 
 .restau_cards {
