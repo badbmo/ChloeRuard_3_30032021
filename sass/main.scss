@@ -79,14 +79,19 @@ a {
 	color: inherit;
 }
 
-button {
-	padding: 12px 20px;
-	border-radius: 50px;
-	border-width: 0px;
-	color: $secondary-text-color;
-	background: $secondary-color;
-	background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
-	font-weight: bold;
+.btn{
+@include flex-center;
+margin-bottom: 60px; 
+	button {
+		padding: 12px 20px;
+		min-width: 190px;
+		border-radius: 50px;
+		border-width: 0px;
+		color: $secondary-text-color;
+		background: $secondary-color;
+		background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
+		font-weight: bold;
+	}
 }
 
 article {

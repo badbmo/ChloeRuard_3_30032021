@@ -88,8 +88,15 @@ a {
   color: inherit;
 }
 
-button {
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.btn button {
   padding: 12px 20px;
+  min-width: 190px;
   border-radius: 50px;
   border-width: 0px;
   color: #ffffff;
