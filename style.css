@@ -1,34 +1,18 @@
-/*padding: 40px 4% 0px 4% en mixin !*/
-/* mixin margin 
-text-shadow mixin 
-box shadow mixin
-border radius classic / button / title en mixin*/
-footer {
-  background-color: #353535;
-  color: #ffff;
-  padding: 0;
-}
+/* Error: expected selector.
+ *   ,
+ * 1 | *∕
+ *   |  ^
+ *   '
+ *   sass\base\_reset.scss 1:2  @import
+ *   sass\main.scss 1:9         root stylesheet */
 
-a {
-  text-decoration: none;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: expected selector.\a   \2577 \a 1 \2502  */\d\a   \2502   ^\a   \2575 \a   sass\\base\\_reset.scss 1:2  @import\a   sass\\main.scss 1:9         root stylesheet";
 }
-
-footer ul {
-  list-style-type: none;
-}
-
-.img_housing img {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-
-.img_housing {
-  border-radius: 20px 20px 0px 0px;
-  overflow: hidden;
-  width: 100%;
-  height: 115px;
-}
-
-/*# sourceMappingURL=style.css.map */
