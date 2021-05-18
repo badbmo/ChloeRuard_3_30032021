@@ -12,9 +12,10 @@
 	</head>
 	<body>
 		<div class="wrapper">
+<!--Header-->
 			<header class="header">
 				<div class="header__btn">
-					<a href="index.html">
+					<a class="link" href="index.html">
 						<i class="fas fa-arrow-left"></i>
 					</a>
 				</div>
@@ -22,17 +23,21 @@
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
 			</header>
+<!--ATTENTION besoin de div pour logo?-->
 
 			<main>
+<!--Hero-->
 				<div class="hero">
-					<img src="img/le_delice_des_sens.jpg" alt="restaurant le délice des sens" />
+					<img class="hero__img" src="img/le_delice_des_sens.jpg" alt="restaurant le délice des sens" />
 				</div>
+<!--Menu-->
 				<section class="menu">
 					<section class="menu__name">
 						<h1>Le délice des sens</h1>
 						<i class="far fa-heart"></i>
 					</section>
 					<section class="menu__content">
+		<!--Starter-->
 						<section>
 							<div>
 								<h2>Entrées</h2>
@@ -74,6 +79,7 @@
 								</div>
 							</article class="food">
 						</section>
+		<!--Main course-->
 						<section>
 							<div>
 								<h2>Plats</h2>
@@ -115,6 +121,7 @@
 								</div>
 							</article>
 						</section>
+		<!--Dessert-->
 						<section>
 							<div>
 								<h2>Desserts</h2>
@@ -157,22 +164,22 @@
 							</article>
 						</section>
 					</section>
-					<div class="btn">
-						<button>Commander</button>
-					</div>
+		<!--Order-->
+						<button class="btn">Commander</button>
+<!--ATTENTION besoin de div ou pas pour bouton ?-->
 				</section>
-
 			</main>
-
+<!--Footer-->
 			<footer class="footer">
 				<div class="footer__logo">
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
-				<ul>
-					<li><i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
-					<li><i class="fas fa-hands-helping"></i><a href="#">Devenir un partenaire</a></li>
-					<li><a href="#">Mention légales</a></li>
-					<li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
+<!--ATTENTION besoin de div ou pas pour logo ?-->
+				<ul class="footer__links">
+					<li><i class="fas fa-utensils footer__icon"></i><a class="link" href="#">Proposer un restaurant</a></li>
+					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link" href="#">Devenir un partenaire</a></li>
+					<li><a class="link" href="#">Mention légales</a></li>
+					<li><a class="link" href="mailto:contact@ohmyfood.fr">Contact</a></li>
 				</ul>
 			</footer>
 		</div>

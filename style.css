@@ -10,7 +10,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article,
-.operating_cards__card, aside, canvas, details, embed,
+.process-cards__card, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
@@ -23,7 +23,7 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, .operating_cards__card, aside, details, figcaption, figure,
+article, .process-cards__card, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -55,8 +55,10 @@ table {
 /*retravailer les padding et les margin plus proprement ...*/
 .wrapper {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #f6f6f6;
 }
 
+/*est-ce bien utile si au final on ne l'utilise que ici ?*/
 .header {
   display: flex;
   justify-content: center;
@@ -76,74 +78,57 @@ table {
   background-color: #353535;
   color: #ffffff;
   padding: 20px;
+  /*ATTENTION revoir nom img pour logo*/
 }
 .footer__logo img {
   filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
 }
-.footer ul {
+.footer__links {
   list-style-type: none;
 }
 
-a {
+.link {
   text-decoration: none;
   color: inherit;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px;
-}
-.btn button {
-  cursor: pointer;
-  padding: 12px 20px;
-  min-width: 190px;
-  border-radius: 50px;
-  border-width: 0px;
-  color: #ffffff;
-  background: #ff79da;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  font-weight: bold;
-}
-
-article, .operating_cards__card {
+article, .process-cards__card {
   border-radius: 20px;
   box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
 }
 
+/*ATTENTION retravailler les noms pour articles*/
 /*retravailler les shadows: plus marqué en bas et bas droite*/
 .restau {
   padding: 20px;
-  background-color: #f6f6f6;
 }
 .restau__cards {
   display: grid;
   gap: 20px;
 }
-.restau__cards__card {
+.restau__card {
   position: relative;
 }
-.restau__cards__card__picture {
+.restau__img-section {
   border-radius: 20px 20px 0px 0px;
   overflow: hidden;
   height: 175px;
 }
-.restau__cards__card__picture img {
+.restau__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restau__cards__card__txt {
+.restau__info-section {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
-.restau__cards__card__txt .heart {
+.restau__info-section .heart {
   justify-self: end;
   align-self: center;
 }
-.restau__cards__card--new {
+.restau__new {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -152,13 +137,13 @@ article, .operating_cards__card {
   padding: 8px 10px;
 }
 
-.operating_cards {
+.process-cards {
   display: grid;
   gap: 20px;
   padding: 20px;
   background-color: #ffffff;
 }
-.operating_cards__card {
+.process-cards__card {
   position: relative;
   display: grid;
   gap: 20px;
@@ -169,7 +154,7 @@ article, .operating_cards__card {
   padding-left: 40px;
   background-color: #f6f6f6;
 }
-.operating_cards__card__number {
+.process-cards__number {
   background-color: #9356dc;
   border-radius: 40px;
   height: 30px;
@@ -182,7 +167,7 @@ article, .operating_cards__card {
   top: center;
   left: -15px;
 }
-.operating_cards__card__icon {
+.process-cards__icon {
   color: #7e7e7e;
 }
 
@@ -198,20 +183,35 @@ article, .operating_cards__card {
 }
 
 .introducing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-top: 45px;
   text-align: center;
-  background-color: #f6f6f6;
+  /*ATTENTION retravailler nom titres et txt*/
 }
 .introducing h1,
 .introducing p {
   padding: 10px;
+}
+.introducing .btn {
+  cursor: pointer;
+  padding: 12px 20px;
+  min-width: 190px;
+  border-radius: 50px;
+  border-width: 0px;
+  color: #ffffff;
+  background: #ff79da;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  font-weight: bold;
 }
 
 .hero {
   height: 270px;
   /*retravailler la taille en % pour responsive + un max-height*/
 }
-.hero img {
+.hero__img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -221,7 +221,7 @@ article, .operating_cards__card {
 .menu {
   position: relative;
   margin-top: -60px;
-  background: #f6f6f6;
+  background-color: #f6f6f6;
   border-radius: 20px 20px 0 0;
   padding: 20px;
 }
@@ -231,10 +231,22 @@ article, .operating_cards__card {
   align-items: center;
   padding: 40px 0px;
 }
+.menu .btn {
+  cursor: pointer;
+  padding: 12px 20px;
+  min-width: 190px;
+  border-radius: 50px;
+  border-width: 0px;
+  color: #ffffff;
+  background: #ff79da;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  font-weight: bold;
+}
 
 .menu__content {
   display: grid;
   gap: 20px;
+  /*ATTENTION retravailler nom sections pour menu*/
 }
 .menu__content section {
   display: grid;
