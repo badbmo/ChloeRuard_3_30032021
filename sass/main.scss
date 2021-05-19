@@ -21,13 +21,6 @@ $search-icon-color: #353535;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-$font-size: (
-	main: 30rem,
-	secondary: 20rem,
-	tertiary: 10rem,
-	classic: 5rem,
-);
-
 /* voir si ya pas moyen de faire un truc super pété avec une fonction qui attribue la font en fonction de la taille que je choisi avec une maps ...*/
 
 @mixin margin-main-section {
@@ -62,7 +55,7 @@ $padding: (
 	color: $secondary-text-color;
 	background: $secondary-color;
 	background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .wrapper {
@@ -71,6 +64,24 @@ $padding: (
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
+
+.title {
+	font-weight: bold;
+	font-size: 1.4rem;
+}
+
+.txt {
+	font-weight: 200;
+}
+
+.min-title {
+	font-weight: bold;
+}
+
+.menu__title {
+	font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+	font-size: 1.8rem;
+}
 
 .header {
 	@include flex-center;
@@ -165,6 +176,7 @@ article {
 		height: 70px;
 		padding-left: 40px;
 		background-color: $primary-background-color;
+		font-weight: 500;
 	}
 
 	&__number {
@@ -182,6 +194,7 @@ article {
 		color: $process-icon-color;
 	}
 }
+/* ATTENTION réfléchir pour la taille des icones */
 
 .search {
 	@include flex-center;
@@ -191,6 +204,7 @@ article {
 		padding-right: 20px;
 	}
 }
+/* Trouver une solution pour center correctement serach sous titre */
 
 .introducing {
 	@include flex-center;
@@ -221,16 +235,21 @@ article {
 	position: relative;
 	margin-top: -60px;
 	background-color: $primary-background-color;
-	border-radius: 20px 20px 0 0;
+	border-radius: 40px 40px 0 0;
 	padding: 20px;
+
 	&__name {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 40px 0px;
 	}
-	.btn {
-		@include button;
+	&__btn {
+		@include flex-center;
+
+		.btn {
+			@include button;
+		}
 	}
 }
 .menu__content {

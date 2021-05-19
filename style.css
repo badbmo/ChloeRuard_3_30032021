@@ -59,6 +59,24 @@ table {
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
+.title {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.txt {
+  font-weight: 200;
+}
+
+.min-title {
+  font-weight: bold;
+}
+
+.menu__title {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -153,6 +171,7 @@ article, .process-cards__card {
   height: 70px;
   padding-left: 40px;
   background-color: #f6f6f6;
+  font-weight: 500;
 }
 .process-cards__number {
   background-color: #9356dc;
@@ -171,6 +190,7 @@ article, .process-cards__card {
   color: #7e7e7e;
 }
 
+/* ATTENTION réfléchir pour la taille des icones */
 .search {
   display: flex;
   justify-content: center;
@@ -182,6 +202,7 @@ article, .process-cards__card {
   padding-right: 20px;
 }
 
+/* Trouver une solution pour center correctement serach sous titre */
 .introducing {
   display: flex;
   justify-content: center;
@@ -204,7 +225,7 @@ article, .process-cards__card {
   color: #ffffff;
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .hero {
@@ -222,7 +243,7 @@ article, .process-cards__card {
   position: relative;
   margin-top: -60px;
   background-color: #f6f6f6;
-  border-radius: 20px 20px 0 0;
+  border-radius: 40px 40px 0 0;
   padding: 20px;
 }
 .menu__name {
@@ -231,7 +252,12 @@ article, .process-cards__card {
   align-items: center;
   padding: 40px 0px;
 }
-.menu .btn {
+.menu__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__btn .btn {
   cursor: pointer;
   padding: 12px 20px;
   min-width: 190px;
@@ -240,7 +266,7 @@ article, .process-cards__card {
   color: #ffffff;
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .menu__content {

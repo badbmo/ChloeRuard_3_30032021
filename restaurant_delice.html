@@ -19,7 +19,7 @@
 						<i class="fas fa-arrow-left"></i>
 					</a>
 				</div>
-				<div class="header__logo">
+				<div>
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
 			</header>
@@ -33,19 +33,19 @@
 <!--Menu-->
 				<section class="menu">
 					<section class="menu__name">
-						<h1>Le délice des sens</h1>
+						<h1 class="menu__title">Le délice des sens</h1>
 						<i class="far fa-heart"></i>
 					</section>
 					<section class="menu__content">
 		<!--Starter-->
 						<section>
-							<div>
+							<div  class="menu__min-title">
 								<h2>Entrées</h2>
 							</div>
 							<article class="food">
 								<div class="food__description">
-									<h3>Tartare de thon</h3>
-									<p>Assaisonné au yuzu</p>
+									<h3 class="min-title">Tartare de thon</h3>
+									<p class="txt">Assaisonné au yuzu</p>
 								</div>
 								<div class="food__price">
 									<p>25€</p>
@@ -56,8 +56,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Bouchée de homard croustillant</h3>
-									<p>Et sa farandole de petits légumes</p>
+									<h3 class="min-title">Bouchée de homard croustillant</h3>
+									<p class="txt">Et sa farandole de petits légumes</p>
 								</div>
 								<div class="food__price">
 									<p>35€</p>
@@ -68,8 +68,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Velouté de cèpes</h3>
-									<p>Aux truffes</p>
+									<h3 class="min-title">Velouté de cèpes</h3>
+									<p class="txt">Aux truffes</p>
 								</div>
 								<div class="food__price">
 									<p>20€</p>
@@ -81,13 +81,13 @@
 						</section>
 		<!--Main course-->
 						<section>
-							<div>
+							<div  class="menu__min-title">
 								<h2>Plats</h2>
 							</div>
 							<article class="food">
 								<div class="food__description">
-									<h3>Poulet rôti aux herbes de Provence</h3>
-									<p>Et sa crème de truffe</p>
+									<h3 class="min-title">Poulet rôti aux herbes de Provence</h3>
+									<p class="txt">Et sa crème de truffe</p>
 								</div>
 								<div class="food__price">
 									<p>40€</p>
@@ -98,8 +98,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Langouste rôtie</h3>
-									<p>Et ses légumes de saison</p>
+									<h3 class="min-title">Langouste rôtie</h3>
+									<p class="txt">Et ses légumes de saison</p>
 								</div>
 								<div class="food__price">
 									<p>35€</p>
@@ -110,8 +110,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Côte de boeuf Angus</h3>
-									<p>Et sa purée de panais</p>
+									<h3 class="min-title">Côte de boeuf Angus</h3>
+									<p class="txt">Et sa purée de panais</p>
 								</div>
 								<div class="food__price">
 									<p>44€</p>
@@ -123,13 +123,13 @@
 						</section>
 		<!--Dessert-->
 						<section>
-							<div>
+							<div  class="menu__min-title">
 								<h2>Desserts</h2>
 							</div>
 							<article class="food">
 								<div class="food__description">
-									<h3>Farandole de desserts</h3>
-									<p>Du chef</p>
+									<h3 class="min-title">Farandole de desserts</h3>
+									<p class="txt">Du chef</p>
 								</div>
 								<div class="food__price">
 									<p>18€</p>
@@ -140,8 +140,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Crème brulée</h3>
-									<p>Revisitée</p>
+									<h3 class="min-title">Crème brulée</h3>
+									<p class="txt">Revisitée</p>
 								</div>
 								<div class="food__price">
 									<p>22€</p>
@@ -152,8 +152,8 @@
 							</article>
 							<article class="food">
 								<div class="food__description">
-									<h3>Tiramisu</h3>
-									<p>À la noisette</p>
+									<h3 class="min-title">Tiramisu</h3>
+									<p class="txt">À la noisette</p>
 								</div>
 								<div class="food__price">
 									<p>23€</p>
@@ -165,7 +165,9 @@
 						</section>
 					</section>
 		<!--Order-->
+					<div class="menu__btn">
 						<button class="btn">Commander</button>
+					</div>
 <!--ATTENTION besoin de div ou pas pour bouton ?-->
 				</section>
 			</main>
@@ -174,12 +176,12 @@
 				<div class="footer__logo">
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
-<!--ATTENTION besoin de div ou pas pour logo ?-->
+				<!-- ATTENTION besoin de div ou pas pour logo ?-->
 				<ul class="footer__links">
-					<li><i class="fas fa-utensils footer__icon"></i><a class="link" href="#">Proposer un restaurant</a></li>
-					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link" href="#">Devenir un partenaire</a></li>
-					<li><a class="link" href="#">Mention légales</a></li>
-					<li><a class="link" href="mailto:contact@ohmyfood.fr">Contact</a></li>
+					<li><i class="fas fa-utensils footer__icon"></i><a class="link txt-bold" href="#">Proposer un restaurant</a></li>
+					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link txt-bold" href="#">Devenir un partenaire</a></li>
+					<li><a class="link txt-bold" href="#">Mention légales</a></li>
+					<li><a class="link txt-bold" href="mailto:contact@ohmyfood.fr">Contact</a></li>
 				</ul>
 			</footer>
 		</div>

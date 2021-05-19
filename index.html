@@ -18,28 +18,30 @@
 			</div>
 			<!-- Header-->
 			<header class="header">
-				<div class="header__logo">
+				<div>
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
 			</header>
-<!--ATTENTION besoin de div pour logo?-->
+			<!--ATTENTION besoin de div pour logo?-->
 
 			<main>
 				<!-- Search-->
 				<section class="search">
 					<i class="fas fa-map-marker-alt search__icon"></i>
-					<p>Paris, Belleville</p>
+					<p class="txt-bold">Paris, Belleville</p>
 				</section>
 				<!-- Presentation-->
 				<section class="introducing">
-					<h1>Réservez le menu qui vous convient</h1>
-					<p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-					<button class="btn">Explorer nos restaurants</button>
-<!--ATTENTION besoin div ou pas pour bouton ?-->
+					<h1 class="title">Réservez le menu qui vous convient</h1>
+					<p class="txt">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+					<div>
+						<button class="btn">Explorer nos restaurants</button>
+					</div>
+					<!--ATTENTION besoin div ou pas pour bouton ?-->
 				</section>
 				<!--Process-->
 				<section class="process-cards">
-					<h2>Fonctionnement</h2>
+					<h2 class="title">Fonctionnement</h2>
 					<div class="process-cards__card">
 						<div class="process-cards__number">
 							<p>1</p>
@@ -48,7 +50,7 @@
 							<i class="fas fa-mobile-alt"></i>
 						</div>
 						<div>
-							<p>Choisissez un restaurant</p>
+							<p class="txt-bold">Choisissez un restaurant</p>
 						</div>
 					</div>
 					<div class="process-cards__card">
@@ -59,7 +61,7 @@
 							<i class="fas fa-list-ul"></i>
 						</div>
 						<div>
-							<p>Composez votre menu</p>
+							<p class="txt-bold">Composez votre menu</p>
 						</div>
 					</div>
 					<div class="process-cards__card">
@@ -70,14 +72,13 @@
 							<i class="fas fa-store"></i>
 						</div>
 						<div>
-							<p>Dégustez au restaurant</p>
+							<p class="txt-bold">Dégustez au restaurant</p>
 						</div>
 					</div>
-<!-- ATTENTION vérifier si besoin de mettre des div ou pas pour les cartes...-->
 				</section>
 				<!--Restaurant selection-->
 				<section class="restau">
-					<h2>Restaurants</h2>
+					<h2 class="restau__title title">Restaurants</h2>
 					<div class="restau__cards">
 						<article class="restau__card">
 							<a class="link" href="restaurant_palette.html">
@@ -89,8 +90,8 @@
 								</div>
 								<div class="restau__info-section">
 									<div class="restau__info">
-										<h3>La palette du goût</h3>
-										<p>Ménilmontant</p>
+										<h3 class="min-title">La palette du goût</h3>
+										<p class="txt">Ménilmontant</p>
 									</div>
 									<div class="heart">
 										<i class="far fa-heart"></i>
@@ -108,8 +109,8 @@
 								</div>
 								<div class="restau__info-section">
 									<div class="restau__info">
-										<h3>La note enchantée</h3>
-										<p>Charonne</p>
+										<h3 class="min-title">La note enchantée</h3>
+										<p class="txt">Charonne</p>
 									</div>
 									<div class="heart">
 										<i class="far fa-heart"></i>
@@ -124,8 +125,8 @@
 								</div>
 								<div class="restau__info-section">
 									<div class="restau__info">
-										<h3>À la française</h3>
-										<p>Cité Rouge</p>
+										<h3 class="min-title">À la française</h3>
+										<p class="txt">Cité Rouge</p>
 									</div>
 									<div class="heart">
 										<i class="far fa-heart"></i>
@@ -140,8 +141,8 @@
 								</div>
 								<div class="restau__info-section">
 									<div class="restau__info">
-										<h3>Le délice des sens</h3>
-										<p>Folie-Méricourt</p>
+										<h3 class="min-title">Le délice des sens</h3>
+										<p class="txt">Folie-Méricourt</p>
 									</div>
 									<div class="heart">
 										<i class="far fa-heart"></i>
@@ -157,12 +158,12 @@
 				<div class="footer__logo">
 					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
-<!-- ATTENTION besoin de div ou pas pour logo ?-->
+				<!-- ATTENTION besoin de div ou pas pour logo ?-->
 				<ul class="footer__links">
-					<li><i class="fas fa-utensils footer__icon"></i><a class="link" href="#">Proposer un restaurant</a></li>
-					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link" href="#">Devenir un partenaire</a></li>
-					<li><a class="link" href="#">Mention légales</a></li>
-					<li><a class="link" href="mailto:contact@ohmyfood.fr">Contact</a></li>
+					<li><i class="fas fa-utensils footer__icon"></i><a class="link txt-bold" href="#">Proposer un restaurant</a></li>
+					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link txt-bold" href="#">Devenir un partenaire</a></li>
+					<li><a class="link txt-bold" href="#">Mention légales</a></li>
+					<li><a class="link txt-bold" href="mailto:contact@ohmyfood.fr">Contact</a></li>
 				</ul>
 			</footer>
 		</div>
