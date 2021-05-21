@@ -27,8 +27,12 @@
 			<main>
 				<!-- Search-->
 				<section class="search">
-					<i class="fas fa-map-marker-alt search__icon"></i>
-					<p class="txt-bold">Paris, Belleville</p>
+					<div class="search__icon">
+						<i class="fas fa-map-marker-alt"></i>
+					</div>
+					<div>
+						<p class="txt-bold">Paris, Belleville</p>
+					</div>
 				</section>
 				<!-- Presentation-->
 				<section class="introducing">
@@ -40,39 +44,41 @@
 					<!--ATTENTION besoin div ou pas pour bouton ?-->
 				</section>
 				<!--Process-->
-				<section class="process-cards">
+				<section class="process">
 					<h2 class="title">Fonctionnement</h2>
-					<div class="process-cards__card">
-						<div class="process-cards__number">
-							<p>1</p>
+					<div class="process__cards">
+						<div class="process__card">
+							<div class="process__number">
+								<p>1</p>
+							</div>
+							<div class="process__icon">
+								<i class="fas fa-mobile-alt"></i>
+							</div>
+							<div>
+								<p class="txt-bold">Choisissez un restaurant</p>
+							</div>
 						</div>
-						<div class="process-cards__icon">
-							<i class="fas fa-mobile-alt"></i>
+						<div class="process__card">
+							<div class="process__number">
+								<p>2</p>
+							</div>
+							<div class="process__icon">
+								<i class="fas fa-list-ul"></i>
+							</div>
+							<div>
+								<p class="txt-bold">Composez votre menu</p>
+							</div>
 						</div>
-						<div>
-							<p class="txt-bold">Choisissez un restaurant</p>
-						</div>
-					</div>
-					<div class="process-cards__card">
-						<div class="process-cards__number">
-							<p>2</p>
-						</div>
-						<div class="process-cards__icon">
-							<i class="fas fa-list-ul"></i>
-						</div>
-						<div>
-							<p class="txt-bold">Composez votre menu</p>
-						</div>
-					</div>
-					<div class="process-cards__card">
-						<div class="process-cards__number">
-							<p>3</p>
-						</div>
-						<div class="process-cards__icon">
-							<i class="fas fa-store"></i>
-						</div>
-						<div>
-							<p class="txt-bold">Dégustez au restaurant</p>
+						<div class="process__card">
+							<div class="process__number">
+								<p>3</p>
+							</div>
+							<div class="process__icon">
+								<i class="fas fa-store"></i>
+							</div>
+							<div>
+								<p class="txt-bold">Dégustez au restaurant</p>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -156,14 +162,18 @@
 			<!--Footer-->
 			<footer class="footer">
 				<div class="footer__logo">
-					<img src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
+					<img class="footer__logo-svg" src="img/ohmyfood@2x.svg" alt="logo de oh my food" />
 				</div>
 				<!-- ATTENTION besoin de div ou pas pour logo ?-->
 				<ul class="footer__links">
-					<li><i class="fas fa-utensils footer__icon"></i><a class="link txt-bold" href="#">Proposer un restaurant</a></li>
-					<li><i class="fas fa-hands-helping footer__icon"></i><a class="link txt-bold" href="#">Devenir un partenaire</a></li>
-					<li><a class="link txt-bold" href="#">Mention légales</a></li>
-					<li><a class="link txt-bold" href="mailto:contact@ohmyfood.fr">Contact</a></li>
+					<li class="footer__link">
+						<i class="fas fa-utensils footer__icon"></i><a class="link" href="#">Proposer un restaurant</a>
+					</li>
+					<li class="footer__link">
+						<i class="fas fa-hands-helping footer__icon"></i><a class="link" href="#">Devenir un partenaire</a>
+					</li>
+					<li class="footer__link"><a class="link" href="#">Mention légales</a></li>
+					<li class="footer__link"><a class="link" href="mailto:contact@ohmyfood.fr">Contact</a></li>
 				</ul>
 			</footer>
 		</div>

@@ -10,7 +10,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article,
-.process-cards__card, aside, canvas, details, embed,
+.process__card, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
@@ -23,7 +23,7 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, .process-cards__card, aside, details, figcaption, figure,
+article, .process__card, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -51,30 +51,58 @@ table {
   border-spacing: 0;
 }
 
-/* voir si ya pas moyen de faire un truc super pété avec une fonction qui attribue la font en fonction de la taille que je choisi avec une maps ...*/
-/*retravailer les padding et les margin plus proprement ...*/
+/*$breakpoints (
+	mobile: 599px
+);
+
+@mixin responsive {
+	@media screen and (min-width: map-get($breakpoints,mobile)){
+		@content;
+	}
+}
+
+$font-size: (logo-footer: , title: 5rem ...);
+==> font-size: map-get ($font-size,logo-footer);
+
+*/
 .wrapper {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #f6f6f6;
+  max-width: 1440px;
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
 .title {
   font-weight: bold;
   font-size: 1.4rem;
+  margin: 30px 0 10px 0;
 }
 
 .txt {
   font-weight: 200;
+  margin: 10px 0;
 }
 
+.txt-bold {
+  margin: 10px 0;
+}
+
+/*enlever txt-bold dans html*/
 .min-title {
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .menu__title {
   font-family: "Shrikhand", Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
+}
+
+.menu__min-title {
+  text-transform: uppercase;
+  font-weight: 200;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #99e2d0;
 }
 
 .header {
@@ -96,13 +124,22 @@ table {
   background-color: #353535;
   color: #ffffff;
   padding: 20px;
-  /*ATTENTION revoir nom img pour logo*/
 }
-.footer__logo img {
+.footer__logo {
+  margin: 10px;
+}
+.footer__logo-svg {
   filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
+  height: 20px;
 }
 .footer__links {
   list-style-type: none;
+}
+.footer__link {
+  margin: 10px;
+}
+.footer__icon {
+  margin-right: 20px;
 }
 
 .link {
@@ -110,15 +147,16 @@ table {
   color: inherit;
 }
 
-article, .process-cards__card {
+article, .process__card {
   border-radius: 20px;
   box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
 }
 
-/*ATTENTION retravailler les noms pour articles*/
+/*ATTENTION retravailler les noms pour articles ou le transformer en place holder*/
 /*retravailler les shadows: plus marqué en bas et bas droite*/
 .restau {
-  padding: 20px;
+  padding: 30px 20px;
+  /*en mixin*/
 }
 .restau__cards {
   display: grid;
@@ -141,6 +179,7 @@ article, .process-cards__card {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
 }
 .restau__info-section .heart {
   justify-self: end;
@@ -155,13 +194,16 @@ article, .process-cards__card {
   padding: 8px 10px;
 }
 
-.process-cards {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
+.process {
+  padding: 30px 20px;
+  /*en mixin !*/
   background-color: #ffffff;
 }
-.process-cards__card {
+.process__cards {
+  display: grid;
+  gap: 20px;
+}
+.process__card {
   position: relative;
   display: grid;
   gap: 20px;
@@ -173,7 +215,7 @@ article, .process-cards__card {
   background-color: #f6f6f6;
   font-weight: 500;
 }
-.process-cards__number {
+.process__number {
   background-color: #9356dc;
   border-radius: 40px;
   height: 30px;
@@ -186,7 +228,7 @@ article, .process-cards__card {
   top: center;
   left: -15px;
 }
-.process-cards__icon {
+.process__icon {
   color: #7e7e7e;
 }
 
@@ -199,22 +241,19 @@ article, .process-cards__card {
   padding: 15px;
 }
 .search__icon {
-  padding-right: 20px;
+  margin-right: 20px;
 }
 
+/*ATTENTION revoir padding*/
 /* Trouver une solution pour center correctement serach sous titre */
 .introducing {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 45px;
   text-align: center;
-  /*ATTENTION retravailler nom titres et txt*/
-}
-.introducing h1,
-.introducing p {
-  padding: 10px;
+  padding: 30px 20px;
+  /*en mixin !*/
 }
 .introducing .btn {
   cursor: pointer;
@@ -226,6 +265,7 @@ article, .process-cards__card {
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   font-weight: 600;
+  margin: 30px 0 30px 0;
 }
 
 .hero {
@@ -233,10 +273,9 @@ article, .process-cards__card {
   /*retravailler la taille en % pour responsive + un max-height*/
 }
 .hero__img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  /*penser à faire mixin pour img*/
 }
 
 .menu {
@@ -244,13 +283,14 @@ article, .process-cards__card {
   margin-top: -60px;
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  padding: 20px;
+  padding: 30px 20px;
+  /*ATTENTION revoir padding*/
 }
 .menu__name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0px;
+  margin: 30px 0px;
 }
 .menu__btn {
   display: flex;
@@ -267,6 +307,7 @@ article, .process-cards__card {
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   font-weight: 600;
+  margin: 30px 0 30px 0;
 }
 
 .menu__content {
