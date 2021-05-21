@@ -104,7 +104,15 @@ $font-size: (logo-footer: , title: 5rem ...);
 	text-transform: uppercase;
 	font-weight: 200;
 	padding-bottom: 10px;
-	border-bottom: 3px solid $tertiary-color;
+	position: relative;
+	&:before{
+			content: "";
+			position: absolute;
+			width: 40px;
+			bottom: 0;
+			left: 0;
+			border-bottom: 3px solid $tertiary-color
+	}
 }
 
 
