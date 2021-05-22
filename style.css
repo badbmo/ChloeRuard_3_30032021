@@ -217,7 +217,7 @@ article, .process__card {
 .process__cards {
   display: grid;
   gap: 20px;
-  padding: 20px 0 20px 0;
+  padding: 20px 0 20px 15px;
 }
 .process__card {
   position: relative;
@@ -360,6 +360,15 @@ article, .process__card {
   align-items: center;
   background-color: #ffffff;
 }
+.food__description {
+  padding-left: 20px;
+}
+.food__price {
+  align-self: end;
+  padding: 10px 0;
+  font-weight: 600;
+  /*c'est pas beau! Voir pour mettre en font $ plus haut*/
+}
 .food__check {
   background-color: #99e2d0;
   color: #ffffff;
@@ -369,9 +378,6 @@ article, .process__card {
   justify-content: center;
   align-items: center;
   border-radius: 0 20px 20px 0;
-}
-.food__description {
-  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
