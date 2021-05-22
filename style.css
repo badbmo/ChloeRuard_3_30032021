@@ -75,7 +75,7 @@ $font-size: (logo-footer: , title: 5rem ...);
 .title {
   font-weight: bold;
   font-size: 1.4rem;
-  margin: 30px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 
 .txt {
@@ -134,7 +134,7 @@ $font-size: (logo-footer: , title: 5rem ...);
   padding: 20px;
 }
 .footer__logo {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 .footer__logo-svg {
   filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
@@ -142,12 +142,14 @@ $font-size: (logo-footer: , title: 5rem ...);
 }
 .footer__links {
   list-style-type: none;
+  padding: 5px 0 5px 0;
 }
 .footer__link {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 .footer__icon {
   margin-right: 20px;
+  width: 20px;
 }
 
 .link {
@@ -169,6 +171,7 @@ article, .process__card {
 .restau__cards {
   display: grid;
   gap: 20px;
+  padding: 20px 0 20px 0;
 }
 .restau__card {
   position: relative;
@@ -214,6 +217,7 @@ article, .process__card {
 .process__cards {
   display: grid;
   gap: 20px;
+  padding: 20px 0 20px 0;
 }
 .process__card {
   position: relative;
@@ -338,6 +342,8 @@ article, .process__card {
 .menu__content {
   display: grid;
   gap: 20px;
+  padding: 20px 0 20px 0;
+  /*peut être pas utile car d'autres margin ... à vérifier*/
   /*ATTENTION retravailler nom sections pour menu*/
 }
 .menu__content section {
