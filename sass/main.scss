@@ -32,20 +32,23 @@ $search-icon-color: #353535;
 	align-items: center;
 }
 
+@mixin shadow($force: 0.1) {
+	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, $force);
+}
+
 @mixin button {
 	cursor: pointer;
 	padding: 12px 20px;
 	min-width: 190px;
 	border-radius: 50px;
 	border-width: 0px;
-	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
+	@include shadow;
 	color: $secondary-text-color;
 	background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
 	font-weight: 600;
 	margin: 30px 0 30px 0;
-	&:hover{
-		box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
-		/*mettre box-shadow en mixin*/
+	&:hover {
+		@include shadow(0.4);
 		opacity: 0.5;
 		transition-duration: 0.2s;
 	}
@@ -106,26 +109,25 @@ $font-size: (logo-footer: , title: 5rem ...);
 	font-size: 1.8rem;
 }
 
-.menu__min-title{
+.menu__min-title {
 	text-transform: uppercase;
 	font-weight: 200;
 	padding-bottom: 10px;
 	position: relative;
-	&:before{
-			content: "";
-			position: absolute;
-			width: 40px;
-			bottom: 0;
-			left: 0;
-			border-bottom: 3px solid $tertiary-color
+	&:before {
+		content: "";
+		position: absolute;
+		width: 40px;
+		bottom: 0;
+		left: 0;
+		border-bottom: 3px solid $tertiary-color;
 	}
 }
-
 
 .header {
 	@include flex-center;
 	padding: 20px;
-	box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+	@include shadow(0.3);
 	position: relative;
 	background-color: $secondary-background-color;
 	&__btn {
@@ -164,7 +166,7 @@ $font-size: (logo-footer: , title: 5rem ...);
 
 article {
 	border-radius: 20px;
-	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.1);
+	@include shadow;
 }
 /*ATTENTION retravailler les noms pour articles ou le transformer en place holder*/
 
@@ -179,6 +181,10 @@ article {
 
 	&__card {
 		position: relative;
+		&:hover {
+			transform: scale(1.05);
+			transition-duration: 0.3s;
+		}
 	}
 
 	&__img-section {
@@ -188,7 +194,7 @@ article {
 	}
 
 	&__img {
-	@include img-max;
+		@include img-max;
 	}
 	&__info-section {
 		@include grid;
@@ -227,6 +233,9 @@ article {
 		padding-left: 40px;
 		background-color: $primary-background-color;
 		font-weight: 500;
+		&:hover{
+			background-color: lighten($primary-color, 30%)
+		}
 	}
 
 	&__number {
