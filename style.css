@@ -441,6 +441,11 @@ article, .process__card {
   position: absolute;
   z-index: 2;
   font-size: 2rem;
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
+.heart--empty:hover {
+  opacity: 0;
 }
 .heart--empty:hover + .heart--full::after {
   transform: translateY(-100%) rotate(500deg);
@@ -463,9 +468,9 @@ article, .process__card {
   height: 200%;
   width: 200%;
   background: #f6f6f6;
-  border-radius: 45%;
+  border-radius: 35%;
   transform: translateY(0) rotate(0deg);
-  transition: transform 5s ease-out;
+  transition: transform 6s ease-out;
 }
 
 /*# sourceMappingURL=style.css.map */
