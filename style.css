@@ -72,6 +72,49 @@ $font-size: (logo-footer: , title: 5rem ...);
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader-display 3s ease-out forwards;
+  z-index: 10;
+  position: fixed;
+}
+.loader::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-bottom-color: #99e2d0;
+  animation: loader-spin 1.2s ease infinite;
+}
+@keyframes loader-display {
+  0% {
+    opacity: 0.9;
+    visibility: visible;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .title {
   font-weight: bold;
   font-size: 1.4rem;
@@ -175,10 +218,11 @@ article, .process__card {
 }
 .restau__card {
   position: relative;
-}
-.restau__card:hover {
-  transform: scale(1.05);
-  transition-duration: 0.3s;
+  /*		&:hover {
+  			transform: scale(1.05);
+  			transition-duration: 0.3s;
+  		}
+  */
 }
 .restau__img-section {
   border-radius: 20px 20px 0px 0px;
@@ -231,9 +275,6 @@ article, .process__card {
   background-color: #f6f6f6;
   font-weight: 500;
 }
-.process__card:hover {
-  background-color: #e4d5f6;
-}
 .process__number {
   background-color: #9356dc;
   border-radius: 40px;
@@ -264,7 +305,6 @@ article, .process__card {
 }
 
 /*ATTENTION revoir padding*/
-/* Trouver une solution pour center correctement serach sous titre */
 .introducing {
   display: flex;
   justify-content: center;
@@ -285,11 +325,11 @@ article, .process__card {
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   font-weight: 600;
   margin: 30px 0 30px 0;
+  transition: all 0.2s;
 }
 .introducing .btn:hover {
-  box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.4);
-  opacity: 0.5;
-  transition-duration: 0.2s;
+  box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
 }
 
 .hero {
@@ -332,11 +372,11 @@ article, .process__card {
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   font-weight: 600;
   margin: 30px 0 30px 0;
+  transition: all 0.2s;
 }
 .menu__btn .btn:hover {
-  box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.4);
-  opacity: 0.5;
-  transition-duration: 0.2s;
+  box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
 }
 
 .menu__content {
@@ -352,22 +392,27 @@ article, .process__card {
 }
 
 .food {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 30px 60px;
   height: 70px;
-  justify-items: start;
-  align-items: center;
   background-color: #ffffff;
 }
-.food__description {
-  padding-left: 20px;
+.food__description-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 20px;
+}
+.food__description .title .txt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .food__price {
   align-self: end;
-  padding: 10px 0;
+  margin: 10px 0;
   font-weight: 600;
   /*c'est pas beau! Voir pour mettre en font $ plus haut*/
+  padding-left: 20px;
 }
 .food__check {
   background-color: #99e2d0;
@@ -378,6 +423,18 @@ article, .process__card {
   justify-content: center;
   align-items: center;
   border-radius: 0 20px 20px 0;
+  width: 4rem;
+  transition: all 0.3s;
+  transform: translateX(0);
+  transform-origin: right;
+  overflow: hidden;
+}
+.food__icon {
+  transform: rotate(-360deg);
+  transition: all 0.3s;
+}
+.food:hover .food__check {
+  transform: translateX(-4rem);
 }
 
 /*# sourceMappingURL=style.css.map */
