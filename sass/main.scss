@@ -407,3 +407,39 @@ article {
 		transform: translateX(-4rem);
 	}
 }
+
+.heart{
+	&--empty{
+	position:absolute;
+	z-index:2;
+	font-size:2rem;
+		&:hover{
+			& + .heart--full::after{
+					transform: translateY(-100%) rotate(500deg);
+			}
+		}
+	}
+	&--full{
+		font-size:2rem;
+		background-image: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
+		background-clip:text;
+		color: transparent;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		&::after{
+			content:"";
+			z-index: -1;
+			position: absolute;
+			bottom: -50%;
+			left: -50%;
+			height: 200%;
+			width: 200%;
+			background: $primary-background-color;
+			border-radius: 45%;
+			transform: translateY(0) rotate(0deg);
+			transition: transform 5s ease-out;
+		}
+	}
+
+}

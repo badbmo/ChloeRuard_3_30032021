@@ -437,4 +437,35 @@ article, .process__card {
   transform: translateX(-4rem);
 }
 
+.heart--empty {
+  position: absolute;
+  z-index: 2;
+  font-size: 2rem;
+}
+.heart--empty:hover + .heart--full::after {
+  transform: translateY(-100%) rotate(500deg);
+}
+.heart--full {
+  font-size: 2rem;
+  background-image: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.heart--full::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  background: #f6f6f6;
+  border-radius: 45%;
+  transform: translateY(0) rotate(0deg);
+  transition: transform 5s ease-out;
+}
+
 /*# sourceMappingURL=style.css.map */
