@@ -192,6 +192,13 @@ $font-size: (logo-footer: , title: 5rem ...);
   list-style-type: none;
   display: grid;
 }
+@media screen and (min-width: 768px) {
+  .footer__links {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+  }
+}
 .footer__link {
   margin: 5px 0;
 }
@@ -220,6 +227,12 @@ article, .process__card {
   display: grid;
   gap: 20px;
   padding: 20px 0;
+}
+@media screen and (min-width: 1024px) {
+  .restau__cards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 .restau__card {
   position: relative;
@@ -267,6 +280,12 @@ article, .process__card {
   display: grid;
   gap: 20px;
   padding: 20px 0 20px 15px;
+}
+@media screen and (min-width: 1024px) {
+  .process__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
 }
 .process__card {
   position: relative;
@@ -340,6 +359,11 @@ article, .process__card {
 .hero {
   height: 270px;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+}
 .hero__img {
   width: 100%;
   height: 100%;
@@ -389,6 +413,11 @@ article, .process__card {
   padding: 20px 0 20px 0;
   /*peut être pas utile car d'autres margin ... à vérifier*/
   /*ATTENTION retravailler nom sections pour menu*/
+}
+@media screen and (min-width: 1024px) {
+  .menu__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .menu__content section {
   display: grid;
