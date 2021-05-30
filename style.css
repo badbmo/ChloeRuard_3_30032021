@@ -69,6 +69,7 @@ $font-size: (logo-footer: , title: 5rem ...);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #f6f6f6;
   max-width: 1440px;
+  margin: auto;
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
@@ -391,52 +392,212 @@ article, .process__card {
   gap: 20px;
 }
 
+/*
+.food {
+	height: 70px;
+	background-color: $secondary-background-color;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	&__description-price {
+		@include grid;
+		grid-template-columns: 2fr 1fr;
+	}
+	&__description {
+		margin: 0 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		.min-title {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.txt {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__price {
+		align-self: end;
+		margin: 10px 0;
+		font-weight: 600;
+		//c'est pas beau! Voir pour mettre en font $ plus haut
+		padding-left: 20px;
+		width: 4rem;
+	}
+	&__check {
+		background-color: $tertiary-color;
+		color: $secondary-text-color;
+		height: 100%;
+		width: 4rem;
+		@include flex-center;
+		border-radius: 0 20px 20px 0;
+		transition: all 0.4s;
+		transform: translateX(4rem);
+	}
+	&__icon {
+		font-size: 1.5rem;
+		//c'est pas beau ! mettre un $
+		transform: rotate(-360deg);
+		transition: all 0.4s ease-in-out;
+	}
+	&:hover {
+		& .food__check {
+			transform: translateX(0);
+		}
+		& .food__icon {
+			transform: rotate(0);
+		}
+	}
+}
+*/
+/*
+.food {
+	height: 70px;
+	background-color: $secondary-background-color;
+	overflow: hidden;
+	@include grid;
+	grid-template-columns: 1fr 4rem 4rem;
+	&__description {
+		margin: 0 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		.min-title{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.txt{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__price {
+		align-self: end;
+		margin: 10px 0;
+		font-weight: 600;
+		//c'est pas beau! Voir pour mettre en font $ plus haut
+		padding-left: 20px;
+		transition: all 0.3s;
+		transform: translateX(4rem);
+	}
+	&__check {
+		background-color: $tertiary-color;
+		color: $secondary-text-color;
+		height: 100%;
+		width: 100%;
+		@include flex-center;
+		border-radius: 0 20px 20px 0;
+		transition: all 0.4s;
+		transform: translateX(4rem);
+	}
+	&__icon {
+		font-size: 1.5rem;
+		//c'est pas beau ! mettre un $
+		transform: rotate(-360deg);
+		transition: all 0.4s ease-in-out;
+	}
+	&:hover {
+		& .food__check{
+		transform: translateX(0);
+		}
+		& .food__icon{
+			transform: rotate(0);
+		}
+		& .food__price{
+			transform: translateX(0);
+		}
+	}
+}
+*/
 .food {
   height: 70px;
   background-color: #ffffff;
-}
-.food__description-price {
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  margin: 0 20px;
+  cursor: pointer;
 }
-.food__description .title .txt {
+.food__description {
+  width: calc(100% - 8rem);
+}
+.food__description .min-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.food__description .txt {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .food__price {
   align-self: end;
-  margin: 10px 0;
   font-weight: 600;
-  /*c'est pas beau! Voir pour mettre en font $ plus haut*/
-  padding-left: 20px;
+  width: 4rem;
+  transition: all 0.3s;
+  transform: translateX(100%);
 }
 .food__check {
   background-color: #99e2d0;
   color: #ffffff;
   height: 100%;
-  width: 100%;
+  width: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0 20px 20px 0;
-  width: 4rem;
-  transition: all 0.3s;
-  transform: translateX(0);
-  transform-origin: right;
-  overflow: hidden;
+  transition: all 0.4s;
+  transform: translateX(100%);
 }
 .food__icon {
+  font-size: 1.5rem;
   transform: rotate(-360deg);
-  transition: all 0.3s;
+  transition: all 0.4s ease-in-out;
 }
 .food:hover .food__check {
-  transform: translateX(-4rem);
+  transform: translateX(0);
+}
+.food:hover .food__icon {
+  transform: rotate(0);
+}
+.food:hover .food__price {
+  transform: translateX(0);
 }
 
+.food {
+  animation: cardApparition 800ms ease-out forwards;
+  opacity: 0;
+}
+.food:nth-child(1) {
+  animation-delay: 400ms;
+}
+.food:nth-child(2) {
+  animation-delay: 800ms;
+}
+.food:nth-child(3) {
+  animation-delay: 1200ms;
+}
+.food:nth-child(4) {
+  animation-delay: 1600ms;
+}
+.food:nth-child(5) {
+  animation-delay: 2000ms;
+}
+
+@keyframes cardApparition {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .heart--empty {
   position: absolute;
   z-index: 2;

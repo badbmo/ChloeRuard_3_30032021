@@ -81,6 +81,7 @@ $font-size: (logo-footer: , title: 5rem ...);
 	@include font-text;
 	background-color: $primary-background-color;
 	max-width: 1440px;
+	margin: auto;
 }
 
 /*est-ce bien utile si au final on ne l'utilise que ici ?*/
@@ -357,20 +358,31 @@ article {
 		@include grid;
 	}
 	/*ATTENTION retravailler nom sections pour menu*/
+	
 }
 
+/*
 .food {
 	height: 70px;
 	background-color: $secondary-background-color;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
 	&__description-price {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 100%;
-		margin: 0 20px;
+		@include grid;
+		grid-template-columns: 2fr 1fr;
 	}
 	&__description {
-		.title .txt {
+		margin: 0 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		.min-title {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.txt {
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -380,8 +392,68 @@ article {
 		align-self: end;
 		margin: 10px 0;
 		font-weight: 600;
-		/*c'est pas beau! Voir pour mettre en font $ plus haut*/
+		//c'est pas beau! Voir pour mettre en font $ plus haut
 		padding-left: 20px;
+		width: 4rem;
+	}
+	&__check {
+		background-color: $tertiary-color;
+		color: $secondary-text-color;
+		height: 100%;
+		width: 4rem;
+		@include flex-center;
+		border-radius: 0 20px 20px 0;
+		transition: all 0.4s;
+		transform: translateX(4rem);
+	}
+	&__icon {
+		font-size: 1.5rem;
+		//c'est pas beau ! mettre un $
+		transform: rotate(-360deg);
+		transition: all 0.4s ease-in-out;
+	}
+	&:hover {
+		& .food__check {
+			transform: translateX(0);
+		}
+		& .food__icon {
+			transform: rotate(0);
+		}
+	}
+}
+*/
+
+/*
+.food {
+	height: 70px;
+	background-color: $secondary-background-color;
+	overflow: hidden;
+	@include grid;
+	grid-template-columns: 1fr 4rem 4rem;
+	&__description {
+		margin: 0 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		.min-title{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.txt{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__price {
+		align-self: end;
+		margin: 10px 0;
+		font-weight: 600;
+		//c'est pas beau! Voir pour mettre en font $ plus haut
+		padding-left: 20px;
+		transition: all 0.3s;
+		transform: translateX(4rem);
 	}
 	&__check {
 		background-color: $tertiary-color;
@@ -390,32 +462,116 @@ article {
 		width: 100%;
 		@include flex-center;
 		border-radius: 0 20px 20px 0;
-		width: 4rem;
-		transition: all 0.3s;
-		transform: translateX(0);
-		transform-origin: right;
-		overflow: hidden;
+		transition: all 0.4s;
+		transform: translateX(4rem);
 	}
-	//pb de flex ? le check ne disparait pas et ne se met pas au bout de la carte
 	&__icon {
+		font-size: 1.5rem;
+		//c'est pas beau ! mettre un $
 		transform: rotate(-360deg);
-		transition: all 0.3s;
+		transition: all 0.4s ease-in-out;
 	}
-	//ok ça ça marche pas ....
-	&:hover &__check {
-		transform: translateX(-4rem);
+	&:hover {
+		& .food__check{
+		transform: translateX(0);
+		}
+		& .food__icon{
+			transform: rotate(0);
+		}
+		& .food__price{
+			transform: translateX(0);
+		}
 	}
 }
+*/
+
+.food {
+	height: 70px;
+	background-color: $secondary-background-color;
+	overflow: hidden;
+	display: flex;
+	cursor: pointer;
+	&__description {
+		width: calc(100% - 8rem);
+		.min-title{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.txt{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__price {
+		align-self: end;
+		font-weight: 600;
+		//c'est pas beau! Voir pour mettre en font $ plus haut
+		width: 4rem;
+		transition: all 0.3s;
+		transform: translateX(100%);
+	}
+	&__check {
+		background-color: $tertiary-color;
+		color: $secondary-text-color;
+		height: 100%;
+		width: 4rem;
+		@include flex-center;
+		border-radius: 0 20px 20px 0;
+		transition: all 0.4s;
+		transform: translateX(100%);
+	}
+	&__icon {
+		font-size: 1.5rem;
+		//c'est pas beau ! mettre un $
+		transform: rotate(-360deg);
+		transition: all 0.4s ease-in-out;
+	}
+	&:hover {
+		& .food__check{
+		transform: translateX(0);
+		}
+		& .food__icon{
+			transform: rotate(0);
+		}
+		& .food__price{
+			transform: translateX(0);
+		}
+	}
+}
+
+.food{
+	
+	@for $i from 1 through 5 {
+		&:nth-child(#{$i}){
+				animation-delay: $i * 400ms;
+		}
+		}
+	animation: cardApparition 800ms ease-out forwards;
+	opacity: 0;
+}
+
+@keyframes cardApparition {
+	0% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+	100%{
+		transform: translateY(0);
+	  opacity: 1;
+	}
+  }
 
 .heart {
 	&--empty {
 		position: absolute;
 		z-index: 2;
 		font-size: 2rem;
-		opacity:1;
+		opacity: 1;
 		transition: opacity 3s ease-in-out;
 		&:hover {
-			opacity:0;
+			opacity: 0;
 			& + .heart--full::after {
 				transform: translateY(-100%) rotate(500deg);
 			}
