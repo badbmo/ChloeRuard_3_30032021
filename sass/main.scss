@@ -62,16 +62,8 @@ $search-icon-color: #353535;
 	object-fit: cover;
 }
 
-/*$breakpoints (
-	mobile: 599px
-);
 
-@mixin responsive {
-	@media screen and (min-width: map-get($breakpoints,mobile)){
-		@content;
-	}
-}
-
+/*
 $font-size: (logo-footer: , title: 5rem ...);
 ==> font-size: map-get ($font-size,logo-footer);
 
@@ -140,49 +132,6 @@ $font-size: (logo-footer: , title: 5rem ...);
 	}
 }
 
-/*
-.loader {
-	height: 100vh;
-	width: 100%;
-	background-color: $secondary-background-color;
-	@include flex-center;
-	animation: loader-display 3s ease-out forwards;
-	z-index: 10;
-	position: fixed;
-	&::after {
-		content: "";
-		display: block;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-		border: 5px solid transparent;
-		border-bottom-color: $tertiary-color;
-		animation: loader-spin 1.2s ease infinite;
-	}
-	@keyframes loader-display {
-		0% {
-			opacity: 0.9;
-			visibility: visible;
-		}
-		80% {
-			opacity: 0.9;
-		}
-		100% {
-			opacity: 0;
-			visibility: hidden;
-		}
-	}
-	@keyframes loader-spin {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-}
-*/
-
 .title {
 	font-weight: bold;
 	font-size: 1.4rem;
@@ -250,10 +199,11 @@ $font-size: (logo-footer: , title: 5rem ...);
 	}
 	&__links {
 		list-style-type: none;
-		padding: 5px 0 5px 0;
+		display: grid;
+
 	}
 	&__link {
-		margin: 10px 0 10px 0;
+		margin: 5px 0;
 	}
 	&__icon {
 		margin-right: 20px;
@@ -279,7 +229,8 @@ article {
 	/*en mixin*/
 	&__cards {
 		@include grid;
-		padding: 20px 0 20px 0;
+		padding: 20px 0;
+
 	}
 
 	&__card {
@@ -326,6 +277,7 @@ article {
 	&__cards {
 		@include grid;
 		padding: 20px 0 20px 15px;
+
 	}
 	&__card {
 		position: relative;
@@ -379,7 +331,7 @@ article {
 
 .hero {
 	height: 270px;
-	/*retravailler la taille en % pour responsive + un max-height*/
+
 	&__img {
 		@include img-max;
 	}
@@ -409,6 +361,7 @@ article {
 .menu__content {
 	@include grid;
 	padding: 20px 0 20px 0;
+
 	/*peut être pas utile car d'autres margin ... à vérifier*/
 	section {
 		@include grid;
@@ -416,80 +369,25 @@ article {
 	/*ATTENTION retravailler nom sections pour menu*/
 }
 
-/*
-.food {
-	height: 70px;
-	background-color: $secondary-background-color;
-	overflow: hidden;
-	display: flex;
-	justify-content: space-between;
-	&__description-price {
-		@include grid;
-		grid-template-columns: 2fr 1fr;
-	}
-	&__description {
-		margin: 0 20px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		.min-title {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.txt {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}
-	&__price {
-		align-self: end;
-		margin: 10px 0;
-		font-weight: 600;
-		//c'est pas beau! Voir pour mettre en font $ plus haut
-		padding-left: 20px;
-		width: 4rem;
-	}
-	&__check {
-		background-color: $tertiary-color;
-		color: $secondary-text-color;
-		height: 100%;
-		width: 4rem;
-		@include flex-center;
-		border-radius: 0 20px 20px 0;
-		transition: all 0.4s;
-		transform: translateX(4rem);
-	}
-	&__icon {
-		font-size: 1.5rem;
-		//c'est pas beau ! mettre un $
-		transform: rotate(-360deg);
-		transition: all 0.4s ease-in-out;
-	}
-	&:hover {
-		& .food__check {
-			transform: translateX(0);
-		}
-		& .food__icon {
-			transform: rotate(0);
-		}
-	}
-}
-*/
 
-/*
 .food {
+	cursor: pointer;
 	height: 70px;
 	background-color: $secondary-background-color;
 	overflow: hidden;
 	@include grid;
-	grid-template-columns: 1fr 4rem 4rem;
+	align-items: center;
+	grid-template-columns: 1fr auto auto;
+	@for $i from 1 through 5 {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * 400ms;
+		}
+	}
+	animation: cardApparition 800ms ease-out forwards;
+	opacity: 0;
 	&__description {
 		margin: 0 20px;
-		white-space: nowrap;
 		overflow: hidden;
-		text-overflow: ellipsis;
 		.min-title{
 			white-space: nowrap;
 			overflow: hidden;
@@ -506,104 +404,32 @@ article {
 		margin: 10px 0;
 		font-weight: 600;
 		//c'est pas beau! Voir pour mettre en font $ plus haut
-		padding-left: 20px;
-		transition: all 0.3s;
-		transform: translateX(4rem);
 	}
 	&__check {
 		background-color: $tertiary-color;
 		color: $secondary-text-color;
 		height: 100%;
-		width: 100%;
+		width: 0;
 		@include flex-center;
 		border-radius: 0 20px 20px 0;
-		transition: all 0.4s;
-		transform: translateX(4rem);
+		transition: all 400ms ease-in-out; 
+		transform: translateX(100%);
 	}
 	&__icon {
 		font-size: 1.5rem;
 		//c'est pas beau ! mettre un $
 		transform: rotate(-360deg);
-		transition: all 0.4s ease-in-out;
+		transition: transform 0.4s 100ms ease;
 	}
 	&:hover {
 		& .food__check{
+		width: 4rem;
 		transform: translateX(0);
 		}
 		& .food__icon{
 			transform: rotate(0);
 		}
-		& .food__price{
-			transform: translateX(0);
-		}
 	}
-}
-*/
-
-.food {
-	height: 70px;
-	background-color: $secondary-background-color;
-	overflow: hidden;
-	display: flex;
-	cursor: pointer;
-	&__description {
-		width: calc(100% - 8rem);
-		.min-title {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.txt {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}
-	&__price {
-		align-self: end;
-		font-weight: 600;
-		//c'est pas beau! Voir pour mettre en font $ plus haut
-		width: 4rem;
-		transition: all 0.3s;
-		transform: translateX(100%);
-	}
-	&__check {
-		background-color: $tertiary-color;
-		color: $secondary-text-color;
-		height: 100%;
-		width: 4rem;
-		@include flex-center;
-		border-radius: 0 20px 20px 0;
-		transition: all 0.4s;
-		transform: translateX(100%);
-	}
-	&__icon {
-		font-size: 1.5rem;
-		//c'est pas beau ! mettre un $
-		transform: rotate(-360deg);
-		transition: all 0.4s ease-in-out;
-	}
-	&:hover {
-		& .food__check {
-			transform: translateX(0);
-		}
-		& .food__icon {
-			transform: rotate(0);
-		}
-		& .food__price {
-			transform: translateX(0);
-		}
-	}
-}
-
-.food {
-	@for $i from 1 through 5 {
-		&:nth-child(#{$i}) {
-			animation-delay: $i * 400ms;
-		}
-	}
-	animation: cardApparition 800ms ease-out forwards;
-	opacity: 0;
 }
 
 @keyframes cardApparition {

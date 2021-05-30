@@ -51,16 +51,7 @@ table {
   border-spacing: 0;
 }
 
-/*$breakpoints (
-	mobile: 599px
-);
-
-@mixin responsive {
-	@media screen and (min-width: map-get($breakpoints,mobile)){
-		@content;
-	}
-}
-
+/*
 $font-size: (logo-footer: , title: 5rem ...);
 ==> font-size: map-get ($font-size,logo-footer);
 
@@ -129,48 +120,6 @@ $font-size: (logo-footer: , title: 5rem ...);
     stroke-dashoffset: 0;
   }
 }
-/*
-.loader {
-	height: 100vh;
-	width: 100%;
-	background-color: $secondary-background-color;
-	@include flex-center;
-	animation: loader-display 3s ease-out forwards;
-	z-index: 10;
-	position: fixed;
-	&::after {
-		content: "";
-		display: block;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-		border: 5px solid transparent;
-		border-bottom-color: $tertiary-color;
-		animation: loader-spin 1.2s ease infinite;
-	}
-	@keyframes loader-display {
-		0% {
-			opacity: 0.9;
-			visibility: visible;
-		}
-		80% {
-			opacity: 0.9;
-		}
-		100% {
-			opacity: 0;
-			visibility: hidden;
-		}
-	}
-	@keyframes loader-spin {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-}
-*/
 .title {
   font-weight: bold;
   font-size: 1.4rem;
@@ -241,10 +190,10 @@ $font-size: (logo-footer: , title: 5rem ...);
 }
 .footer__links {
   list-style-type: none;
-  padding: 5px 0 5px 0;
+  display: grid;
 }
 .footer__link {
-  margin: 10px 0 10px 0;
+  margin: 5px 0;
 }
 .footer__icon {
   margin-right: 20px;
@@ -270,7 +219,7 @@ article, .process__card {
 .restau__cards {
   display: grid;
   gap: 20px;
-  padding: 20px 0 20px 0;
+  padding: 20px 0;
 }
 .restau__card {
   position: relative;
@@ -390,7 +339,6 @@ article, .process__card {
 
 .hero {
   height: 270px;
-  /*retravailler la taille en % pour responsive + un max-height*/
 }
 .hero__img {
   width: 100%;
@@ -447,183 +395,15 @@ article, .process__card {
   gap: 20px;
 }
 
-/*
 .food {
-	height: 70px;
-	background-color: $secondary-background-color;
-	overflow: hidden;
-	display: flex;
-	justify-content: space-between;
-	&__description-price {
-		@include grid;
-		grid-template-columns: 2fr 1fr;
-	}
-	&__description {
-		margin: 0 20px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		.min-title {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.txt {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}
-	&__price {
-		align-self: end;
-		margin: 10px 0;
-		font-weight: 600;
-		//c'est pas beau! Voir pour mettre en font $ plus haut
-		padding-left: 20px;
-		width: 4rem;
-	}
-	&__check {
-		background-color: $tertiary-color;
-		color: $secondary-text-color;
-		height: 100%;
-		width: 4rem;
-		@include flex-center;
-		border-radius: 0 20px 20px 0;
-		transition: all 0.4s;
-		transform: translateX(4rem);
-	}
-	&__icon {
-		font-size: 1.5rem;
-		//c'est pas beau ! mettre un $
-		transform: rotate(-360deg);
-		transition: all 0.4s ease-in-out;
-	}
-	&:hover {
-		& .food__check {
-			transform: translateX(0);
-		}
-		& .food__icon {
-			transform: rotate(0);
-		}
-	}
-}
-*/
-/*
-.food {
-	height: 70px;
-	background-color: $secondary-background-color;
-	overflow: hidden;
-	@include grid;
-	grid-template-columns: 1fr 4rem 4rem;
-	&__description {
-		margin: 0 20px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		.min-title{
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.txt{
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}
-	&__price {
-		align-self: end;
-		margin: 10px 0;
-		font-weight: 600;
-		//c'est pas beau! Voir pour mettre en font $ plus haut
-		padding-left: 20px;
-		transition: all 0.3s;
-		transform: translateX(4rem);
-	}
-	&__check {
-		background-color: $tertiary-color;
-		color: $secondary-text-color;
-		height: 100%;
-		width: 100%;
-		@include flex-center;
-		border-radius: 0 20px 20px 0;
-		transition: all 0.4s;
-		transform: translateX(4rem);
-	}
-	&__icon {
-		font-size: 1.5rem;
-		//c'est pas beau ! mettre un $
-		transform: rotate(-360deg);
-		transition: all 0.4s ease-in-out;
-	}
-	&:hover {
-		& .food__check{
-		transform: translateX(0);
-		}
-		& .food__icon{
-			transform: rotate(0);
-		}
-		& .food__price{
-			transform: translateX(0);
-		}
-	}
-}
-*/
-.food {
+  cursor: pointer;
   height: 70px;
   background-color: #ffffff;
   overflow: hidden;
-  display: flex;
-  cursor: pointer;
-}
-.food__description {
-  width: calc(100% - 8rem);
-}
-.food__description .min-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.food__description .txt {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.food__price {
-  align-self: end;
-  font-weight: 600;
-  width: 4rem;
-  transition: all 0.3s;
-  transform: translateX(100%);
-}
-.food__check {
-  background-color: #99e2d0;
-  color: #ffffff;
-  height: 100%;
-  width: 4rem;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  gap: 20px;
   align-items: center;
-  border-radius: 0 20px 20px 0;
-  transition: all 0.4s;
-  transform: translateX(100%);
-}
-.food__icon {
-  font-size: 1.5rem;
-  transform: rotate(-360deg);
-  transition: all 0.4s ease-in-out;
-}
-.food:hover .food__check {
-  transform: translateX(0);
-}
-.food:hover .food__icon {
-  transform: rotate(0);
-}
-.food:hover .food__price {
-  transform: translateX(0);
-}
-
-.food {
+  grid-template-columns: 1fr auto auto;
   animation: cardApparition 800ms ease-out forwards;
   opacity: 0;
 }
@@ -641,6 +421,49 @@ article, .process__card {
 }
 .food:nth-child(5) {
   animation-delay: 2000ms;
+}
+.food__description {
+  margin: 0 20px;
+  overflow: hidden;
+}
+.food__description .min-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.food__description .txt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.food__price {
+  align-self: end;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.food__check {
+  background-color: #99e2d0;
+  color: #ffffff;
+  height: 100%;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  transition: all 400ms ease-in-out;
+  transform: translateX(100%);
+}
+.food__icon {
+  font-size: 1.5rem;
+  transform: rotate(-360deg);
+  transition: transform 0.4s 100ms ease;
+}
+.food:hover .food__check {
+  width: 4rem;
+  transform: translateX(0);
+}
+.food:hover .food__icon {
+  transform: rotate(0);
 }
 
 @keyframes cardApparition {
