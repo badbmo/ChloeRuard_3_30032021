@@ -35,7 +35,6 @@ $search-icon-color: #353535;
 @mixin shadow($force: 0.1) {
 	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, $force);
 }
-//retravailler shadow pour que ce soit plus joli
 
 @mixin button {
 	cursor: pointer;
@@ -53,7 +52,6 @@ $search-icon-color: #353535;
 		@include shadow(0.2);
 		opacity: 0.8;
 	}
-	//retravailler la fonction opacity sur shadow.
 }
 
 @mixin img-max {
@@ -85,8 +83,6 @@ $font-size: (logo-footer: , title: 5rem ...);
 	max-width: 1440px;
 	margin: auto;
 }
-
-/*est-ce bien utile si au final on ne l'utilise que ici ?*/
 
 .loader {
 	height: 100vh;
@@ -156,7 +152,6 @@ $font-size: (logo-footer: , title: 5rem ...);
 .txt-bold {
 	margin: 10px 0;
 }
-/*enlever txt-bold dans html*/
 
 .min-title {
 	font-weight: bold;
@@ -230,13 +225,10 @@ $font-size: (logo-footer: , title: 5rem ...);
 	color: inherit;
 }
 
-article {
+%cards {
 	border-radius: 20px;
 	@include shadow;
 }
-/*ATTENTION retravailler les noms pour articles ou le transformer en place holder*/
-
-/*retravailler les shadows: plus marqué en bas et bas droite*/
 
 .restau {
 	padding: 30px 20px;
@@ -251,6 +243,7 @@ article {
 	}
 
 	&__card {
+		@extend %cards;
 		position: relative;
 	}
 
@@ -296,7 +289,7 @@ article {
 	}
 	&__card {
 		position: relative;
-		@extend article;
+		@extend %cards;
 		@include grid;
 		grid-template-columns: 20px 1fr;
 		justify-items: start;
@@ -381,7 +374,7 @@ article {
 	padding: 30px 20px;
 	/*ATTENTION revoir padding*/
 
-	&__name {
+	&__header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -394,21 +387,22 @@ article {
 			@include button;
 		}
 	}
-}
-.menu__content {
-	@include grid;
-	padding: 20px 0 20px 0;
-	@include responsive(laptop) {
-		grid-template-columns: repeat(3, 1fr);
-	}
-	/*peut être pas utile car d'autres margin ... à vérifier*/
-	section {
+	&__content {
 		@include grid;
+		padding: 20px 0;
+		@include responsive(laptop) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
-	/*ATTENTION retravailler nom sections pour menu*/
+	&__course {
+		@include grid;
+		align-content: start;
+	}
 }
 
+
 .food {
+	@extend %cards;
 	cursor: pointer;
 	height: 70px;
 	background-color: $secondary-background-color;
