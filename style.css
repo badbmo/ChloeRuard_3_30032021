@@ -236,11 +236,6 @@ article, .process__card {
 }
 .restau__card {
   position: relative;
-  /*		&:hover {
-  			transform: scale(1.05);
-  			transition-duration: 0.3s;
-  		}
-  */
 }
 .restau__img-section {
   border-radius: 20px 20px 0px 0px;
@@ -298,6 +293,26 @@ article, .process__card {
   padding-left: 40px;
   background-color: #f6f6f6;
   font-weight: 500;
+  z-index: 1;
+}
+.process__card::after {
+  border-radius: 20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #e4d5f6;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+.process__card:hover::after {
+  opacity: 1;
+}
+.process__card:hover .process__icon {
+  color: #9356dc;
 }
 .process__number {
   background-color: #9356dc;
@@ -314,6 +329,7 @@ article, .process__card {
 }
 .process__icon {
   color: #7e7e7e;
+  transition: color 250ms;
 }
 
 /* ATTENTION réfléchir pour la taille des icones */
@@ -358,11 +374,6 @@ article, .process__card {
 
 .hero {
   height: 270px;
-}
-@media screen and (min-width: 768px) {
-  .hero {
-    height: 40vh;
-  }
 }
 .hero__img {
   width: 100%;
