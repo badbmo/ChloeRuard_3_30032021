@@ -80,7 +80,8 @@
 	&__icon {
 		font-size: 1.5rem;
 		transform: rotate(-360deg);
-		transition: transform 0.4s 100ms ease;
+		transition: all 0.4s 100ms ease;
+		opacity:0;
 	}
 	&:hover {
 		& .food__check {
@@ -89,6 +90,7 @@
 		}
 		& .food__icon {
 			transform: rotate(0);
+			opacity:1;
 		}
 	}
 }
