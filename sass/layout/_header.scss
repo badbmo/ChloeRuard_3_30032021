@@ -1,0 +1,12 @@
+.header {
+	@include flex-center;
+	padding: 20px;
+	@include shadow(0.3);
+	position: relative;
+	background-color: $secondary-background-color;
+	&__btn {
+		position: absolute;
+		top: center;
+		left: 10px;
+	}
+}

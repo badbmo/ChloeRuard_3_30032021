@@ -1,0 +1,18 @@
+//tous les boutons d'action
+.btn {
+	cursor: pointer;
+	padding: 12px 20px;
+	min-width: 190px;
+	border-radius: 50px;
+	border-width: 0px;
+	@include shadow;
+	color: $secondary-text-color;
+	background: linear-gradient(170deg, $secondary-color 0%, $primary-color 100%);
+	font-weight: 600;
+	margin: 30px 0;
+	transition: all 0.2s;
+	&:hover {
+		@include shadow(0.2);
+		opacity: 0.8;
+	}
+}

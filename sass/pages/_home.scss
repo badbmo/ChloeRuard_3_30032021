@@ -1,0 +1,124 @@
+
+.restau {
+	padding: 30px 20px;
+	&__cards {
+		@include grid;
+		padding: 20px 0;
+		@include responsive(laptop) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+	}
+
+	&__card {
+		@include cards;
+		position: relative;
+	}
+
+	&__img-section {
+		border-radius: 20px 20px 0px 0px;
+		overflow: hidden;
+		height: 175px;
+	}
+
+	&__img {
+		@include img-max;
+	}
+	&__info-section {
+		@include grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 10px;
+
+		.heart {
+			justify-self: end;
+			align-self: center;
+		}
+	}
+	&__new {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		color: darken($tertiary-color, 50%);
+		background-color: $tertiary-color;
+		padding: 8px 10px;
+	}
+}
+
+.process {
+	padding: 30px 20px;
+	background-color: $secondary-background-color;
+	&__cards {
+		@include grid;
+		padding: 20px 0 20px 15px;
+		@include responsive(laptop) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
+		}
+	}
+	&__card {
+		position: relative;
+		@include cards;
+		@include grid;
+		grid-template-columns: auto 1fr;
+		justify-items: start;
+		align-items: center;
+		height: 70px;
+		padding-left: 40px;
+		background-color: $primary-background-color;
+		font-weight: 500;
+		z-index: 1;
+		&::after {
+			border-radius: 20px;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			background-color: lighten($primary-color, 30%);
+			opacity: 0;
+			transition: opacity 250ms;
+		}
+		&:hover {
+			&::after {
+				opacity: 1;
+			}
+			& .process__icon {
+				color: $primary-color;
+			}
+		}
+	}
+	&__number {
+		background-color: $primary-color;
+		border-radius: 40px;
+		height: 30px;
+		width: 30px;
+		@include flex-center;
+		color: $secondary-text-color;
+		position: absolute;
+		top: center;
+		left: -15px;
+	}
+	&__icon {
+		color: $process-icon-color;
+		width: 20px;
+		transition: color 250ms;
+	}
+}
+
+.search {
+	@include flex-center;
+	background-color: $city-background-color;
+	padding: 15px;
+	&__icon {
+		margin-right: 20px;
+	}
+}
+
+.introducing {
+	@include flex-center;
+	flex-direction: column;
+	text-align: center;
+	padding: 30px 20px;
+}

@@ -1,0 +1,29 @@
+.footer {
+	background-color: $footer-background-color;
+	color: $secondary-text-color;
+	padding: 20px;
+	&__logo {
+		margin: 10px 0;
+	}
+	&__logo-svg {
+		filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
+		//colorer le logo svg en blanc
+		height: 20px;
+	}
+	&__links {
+		list-style-type: none;
+		display: grid;
+		@include responsive(tablet) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-auto-flow: column;
+		}
+	}
+	&__link {
+		margin: 5px 0;
+	}
+	&__icon {
+		margin-right: 20px;
+		width: 20px;
+	}
+}

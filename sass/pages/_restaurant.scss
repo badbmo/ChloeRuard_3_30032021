@@ -1,0 +1,106 @@
+
+.hero {
+	height: 270px;
+	&__img {
+		@include img-max;
+	}
+}
+.menu {
+	position: relative;
+	margin-top: -60px;
+	background-color: $primary-background-color;
+	border-radius: 40px 40px 0 0;
+	padding: 30px 20px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 30px 0px;
+	}
+	&__btn {
+		@include flex-center;
+	}
+	&__content {
+		@include grid;
+		padding: 20px 0;
+		@include responsive(laptop) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	&__course {
+		@include grid;
+		align-content: start;
+	}
+}
+
+.food {
+	@include cards;
+	cursor: pointer;
+	height: 70px;
+	background-color: $secondary-background-color;
+	overflow: hidden;
+	@include grid;
+	align-items: center;
+	grid-template-columns: 1fr auto auto;
+	//fonction pour dire qu'à chaque élément enfant n, rajouter n400ms de delai
+	@for $i from 1 through 5 {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * 400ms;
+		}
+	}
+	animation: cardApparition 800ms ease-out forwards;
+	opacity: 0;
+	&__description {
+		margin: 0 20px;
+		overflow: hidden;
+		.min-title {
+			@include ellipsis;
+		}
+		.txt {
+			@include ellipsis;
+		}
+	}
+	&__price {
+		align-self: end;
+		margin: 10px 0;
+		font-weight: 600;
+	}
+	&__check {
+		background-color: $tertiary-color;
+		color: $secondary-text-color;
+		height: 100%;
+		width: 0;
+		@include flex-center;
+		border-radius: 0 20px 20px 0;
+		transition: all 400ms ease-in-out;
+		transform: translateX(100%);
+		// faire apparaitre le V au survol de la carte
+	}
+	&__icon {
+		font-size: 1.5rem;
+		transform: rotate(-360deg);
+		transition: transform 0.4s 100ms ease;
+	}
+	&:hover {
+		& .food__check {
+			width: 4rem;
+			transform: translateX(0);
+		}
+		& .food__icon {
+			transform: rotate(0);
+		}
+	}
+}
+
+//apparition progressive des plats
+@keyframes cardApparition {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

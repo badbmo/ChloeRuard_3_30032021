@@ -1,0 +1,6 @@
+.wrapper {
+	@include font-text;
+	background-color: $primary-background-color;
+	max-width: 1440px;
+	margin: auto;
+}

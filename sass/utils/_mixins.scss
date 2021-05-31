@@ -1,0 +1,55 @@
+
+@mixin font-titles {
+	font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+}
+
+@mixin font-text {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+//quand le texte depasse, évite le wrap, cache le texte, affiche trois petits points
+@mixin ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+//pour placer des éléments en grid auto , avec gap standard
+@mixin grid {
+	display: grid;
+	gap: 20px;
+}
+
+//pour centrer un élément enfant parfaitement dans le parent flex
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//fonction pour les ombres de tous les éléments du site, avec choix de la force de transparence (0.1 par défaut)
+@mixin shadow($force: 0.1) {
+	box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, $force);
+}
+
+
+
+// pour que se place de manière optimale (au max) dans sa div parent
+@mixin img-max {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+//fonction pour simplement nommer le device concerné pour le responsive
+@mixin responsive($device) {
+	@media screen and (min-width: map-get($breakpoints, $device)) {
+		@content;
+	}
+}
+
+//pour tous les éléments de type carte
+@mixin cards {
+	border-radius: 20px;
+	@include shadow;
+}
