@@ -2,7 +2,8 @@
 .loader {
 	height: 100vh;
 	width: 100%;
-	background-color: $secondary-background-color;
+	max-width: 1440px;
+	background-color: $primary-background-color;
 	@include flex-center;
 	animation: loader-display 4s ease-out forwards;
 	z-index: 10;
@@ -18,7 +19,7 @@
 		& path {
 			fill: transparent;
 			stroke-width: 2;
-			stroke: $tertiary-color;
+			stroke: darken($tertiary-color,10%);
 			stroke-dasharray: 200;
 			stroke-dashoffset: 200;
 			animation: anim 2s 500ms linear forwards;
@@ -29,7 +30,7 @@
 //afficher la "page" loader en légère transparence puis disparition
 @keyframes loader-display {
 	0% {
-		opacity: 0.9;
+		opacity: 1;
 		visibility: visible;
 	}
 	80% {
