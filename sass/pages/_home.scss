@@ -80,6 +80,7 @@
 			opacity: 0;
 			transition: opacity 250ms;
 		}
+		//creation d'un after et utilisation de opacity (plutôt que de changer la couleur du background au :hover) pour éviter un recalcul de css
 		&:hover {
 			&::after {
 				opacity: 1;
